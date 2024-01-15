@@ -11,3 +11,4 @@ function addNum(num1,num2){
     return total
 }
 console.log(addNum(3,5))
+//notes.............
