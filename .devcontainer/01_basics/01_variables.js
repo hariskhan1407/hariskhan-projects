@@ -11,6 +11,15 @@ city = 'manali'
 
 console.table([name,accountID,accountPassward,city,rollno]);
 
+// ┌─────────┬─────────────┐
+// │ (index) │   Values    │
+// ├─────────┼─────────────┤
+// │    0    │ 'Kaif Khan' │
+// │    1    │  333444555  │
+// │    2    │  333555666  │
+// │    3    │  'manali'   │
+// │    4    │  undefined  │
+// └─────────┴─────────────┘
 /*
 prefer not to use var
 because of issue in block scope and functional scope
