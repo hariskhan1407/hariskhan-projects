@@ -1,0 +1,70 @@
+<!-- DOM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class="heading" id="title">DOM <span style="display: none;">Hii I Am</span></h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <input type="password" name="" id="">
+        
+        <ul>
+            <li class="list">one</li>
+            <li class="list">haris</li>
+            <li class="list">two</li>
+            <li class="list">three</li>
+        </ul>
+    </div>
+    <script>
+let ul = document.querySelector('ul')
+let li = ul.querySelector('li')
+li.style.backgroundColor = 'red'
+let alllist = document.querySelectorAll('li')
+alllist[1].style.color ='green'
+//node list is looking like array some properties are also similar to arrays but it is not an array
+alllist.forEach((l)=>{
+    l.style.border = '4px solid black'
+})
+let list = document.getElementsByClassName('list')
+//Html list milegi 
+//lets convert this to arrray
+let convertedArray = Array.from(list)
+convertedArray.forEach((li)=>li.style.margin = '20px')
+    </script>
+</body>
+</html>
+<!-- Browser run -->
+<!-- document.getElementById('title')
+<h1 class=​"heading" id=​"title">​DOM​</h1>​
+document.getElementById('title').setAttribute('className','title2')
+undefined
+document.body.style.backgroundColor = 'black'
+'black'
+document.body.style.color = '#fff'
+'#fff'
+title.style.backgroundColor = 'brown'
+'brown'
+title.innerText
+'DOM' 
+only inner text(jitna dikhra utna hi milega)
+title.textContent
+'DOM Hii I Am'
+showing full content
+
+title.innerHTML
+'DOM <span style="display: none;">Hii I Am</span>'
+    HTML    bhi milega
+
+    document.querySelector('h1')
+    only h1
+document.querySelectorAll('h2')
+NodeList(4) [h2, h2, h2, h2]
+all h2
+-->

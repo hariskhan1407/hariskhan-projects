@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+ <title>Background Changer</title>
+  
+
+</head>
+<style>
+   h1,h2,.color{
+    display: flex;
+    justify-content: center;
+   }
+   button{
+    height: 200px;
+    width: 200px;
+    margin: 30px;
+    border: 2px solid black;
+   }
+   .gray{
+    background-color: gray;
+   }
+   .white{
+    background-color: white;
+   }
+   .blue{
+    background-color: blue;
+   }
+   .yellow{
+    background-color: yellow;
+   }
+   button:hover{
+    scale: 1.1;
+   }
+</style>
+<body>
+    <h1>Color Scheme Switcher</h1>
+     <div class="color">
+        <button class="gray"></button>
+        <button class="white"></button>
+        <button class="blue"></button>
+        <button class="yellow"></button>
+     </div>
+     <h2>Click On The Color </h2>
+     <h2>To Change the Background Color Of This Page</h2>
+</body>
+<script>
+    const body = document.querySelector('body');
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button)=>{
+        // console.log(button);
+       button.addEventListener('click',(e)=>{
+            if(e.target.className === 'gray') body.style.backgroundColor = e.target.className
+            if(e.target.className === 'white') body.style.backgroundColor = e.target.className
+            if(e.target.className === 'blue') body.style.backgroundColor = e.target.className
+            if(e.target.className === 'yellow') body.style.backgroundColor = e.target.className
+
+
+        })
+    })
+</script>
+</html>

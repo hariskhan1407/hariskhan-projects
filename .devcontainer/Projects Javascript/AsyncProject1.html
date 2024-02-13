@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change background-color Every second</title>
+</head>
+<body>
+    <h1>Change background-color Every second</h1>
+    <button id="start"> Start </button>
+
+    <button id="stop"> Stop </button>
+</body>
+<script>
+function rgba(){
+    const red = Math.floor(Math.random()*255);
+    const green = Math.floor(Math.random()*255);
+    const blue = Math.floor(Math.random()*255);
+    return `rgb(${red},${green},${blue})`
+}
+// console.log(rgba())
+//rgb(153,38,15)
+// gives values b/w 0-255
+// console.log(Math.floor(Math.random()*255))
+const start = document.querySelector('#start')
+const stop = document.querySelector('#stop')
+let interval; 
+const startChangingColor = function(){
+    const changeBgc = function(){
+        //for efficient code
+       
+        
+            document.body.style.backgroundColor = rgba();
+        
+    }
+    if(!interval)
+ interval = setInterval(changeBgc,1000)
+}
+const stopChangingColor = function(){
+clearInterval(interval)
+//for efficient code
+interval = null;
+}
+start.addEventListener('click',startChangingColor)
+stop.addEventListener('click',stopChangingColor)
+
+</script>
+</html>

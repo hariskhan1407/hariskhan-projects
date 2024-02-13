@@ -1,0 +1,19 @@
+JavaScript is Synchronous and Single Thereded.
+Synchronous means line by line Execution of code.
+JavaScript is always Synchronous.
+Single Thereded language is slower then More then one 
+Thereded language.
+But YOu dont feel like single Thereded.
+Because JavaScript engine dont meet alone.
+
+Execution Context
+ Execute one line of code at a time
+ Each operation waits for the last one to complete before Executing
+
+Blocking Code                
+ Block the flow of Program
+ Read file Sync
+
+Non Blocking code
+ Does not blockexecution
+ Read file Async

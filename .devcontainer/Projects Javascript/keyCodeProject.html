@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keycode</title>
+</head>
+<style>
+    body{
+        color: white;
+        background-color: black;
+        
+    }
+    #insert table{
+        height: 200px;
+        width: 200px;
+        font-size: 30px;
+
+       
+    }
+  
+
+</style>
+<body>
+    <h1>Press the Key to get Keycode</h1>
+    <div id="insert"></div>
+    
+</body>
+<script>
+const insert = document.getElementById('insert');
+window.addEventListener('keydown',function(e){
+insert.innerHTML = `
+<div>
+    <table>
+  <tr>
+    <th>Key</th>
+    <th>Key Code</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.keyCode}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table>
+    </div>
+`
+})
+</script>
+</html>

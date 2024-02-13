@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+    <style>body{
+    background-color: black;
+    color:aliceblue;
+    }
+    img{
+        height: 100px;
+        margin: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li><img id="photoshop"  src="https://images.pexels.com/photos/3278129/pexels-photo-3278129.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></li>
+        <li><img id="japan"  src="https://images.pexels.com/photos/1822605/pexels-photo-1822605.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></li>
+        <li><img id="river"  src="https://images.pexels.com/photos/133682/pexels-photo-133682.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></li>
+        <li><img id="prayer"  src="https://images.pexels.com/photos/14244076/pexels-photo-14244076.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt=""></li>
+        <li><a href="google.com" id="google">Google</a></li>
+    </ul>
+    <script>
+        // js code run sequentially (line by line) accept Asynchronous programming
+        //on click on html are not scallable
+        //on click gives less features
+        // document.getElementById("photoshop").onclick = function(){
+        //     alert("Photoshop")
+        // }
+            //Use Event Listeners for more features
+
+            //old feature
+             // attachEvent()
+                // jQuery - on
+
+            document.querySelector('#photoshop').addEventListener('click',function(e){
+                e.target.style.scale = 1.2;
+                alert('photoshop is clicked')
+            },false) //false is default
+
+            // waha true/false likhane ka mtlb hota hai event propogation
+            // false is event capturing and true is event bubbleing
+            document.querySelector("#japan").addEventListener('click',function(e){
+                console.log(e);//browser
+            })
+                // type, timestamp, defaultPrevented
+                 // target, toElement, srcElement, currentTarget,
+                // clientX, clientY, screenX, screenY
+                // altkey, ctrlkey, shiftkey, keyCode
+
+            // document.getElementById("images").addEventListener('click',function(){
+            // console.log('clicked inside the ul')
+            // },false)
+            // document.querySelector("#japan").addEventListener('click',function(){
+            //     console.log('japan clicked')
+            // },false)
+
+//             japan clicked
+//             clicked inside the ul
+
+// document.getElementById("images").addEventListener('click',function(){
+//             console.log('clicked inside the ul')
+//             },true)
+//             document.querySelector("#japan").addEventListener('click',function(){
+//                 console.log('japan clicked')
+//             },false)
+
+            //             clicked inside the ul
+            //             japan clicked
+
+ document.getElementById("images").addEventListener('click',function(){
+            console.log('clicked inside the ul')
+            },false)
+            document.querySelector("#japan").addEventListener('click',function(e){
+                e.stopPropogation()
+                console.log('japan clicked')
+                //only this print
+                //propogation will stop
+               
+
+            },false)
+
+            document.querySelector('#google').addEventListener('click',function(e){
+                //default me google dot com per le jata lekinn rok lia
+                e.preventDefault(e)
+                console.log('google clicked');
+            })
+
+            //project - click and remove the images
+
+            document.getElementById('images').addEventListener('dblclick',function(e){
+               console.log(e.target.tagName);
+               const item = e.target.parentNode;
+               if (e.target.tagName === "IMG")
+                {
+                item.remove();
+            }
+                else if(e.target.tagName === "A"){
+                 e.target.innerHTML = 'Google ke baap se milna chahoge???';
+                 e.target.style.color = 'white';
+                 e.target.style.textDecoration = 'none';
+                 e.target.style.fontSize = '50px';
+                }
+            })
+            //removing images by double click
+    </script>
+</body>
+</html>

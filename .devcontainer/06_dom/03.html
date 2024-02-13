@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let div = document.createElement('div')
+    div.className = 'main'
+    div.id = Math.round(Math.random() * 10 + 1)
+    //id me 1-10 tak random values aaengi
+    div.setAttribute('title','Ye title bangaya')
+    div.style.backgroundColor = 'green'
+    div.style.color = 'white'
+    // div.innerText = 'Khan'
+    //This takes 2 router space because pehle reference aaega then uspe work hoga
+//u can use this
+const divText = document.createTextNode('Khan')
+div.appendChild(divText)
+
+// body me push kerne k lia webpage per dikhane k lia
+
+document.body.appendChild(div)
+
+
+
+
+    console.log(div);
+</script>
+</html>
